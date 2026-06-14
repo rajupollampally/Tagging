@@ -1,50 +1,67 @@
-Story Tagging System Documentation
-Overview
-This document outlines a tagging system for managing stories in Digital.ai Agility. The system aims to improve ownership and decision-making regarding which stories should be included in specific release months.
-Problem Statement
-Currently, it's challenging to determine whether a completed story should be included in the immediate upcoming release or a future release. For example, if a story is completed in August, it's unclear whether it should be released in August (after testing) or held until October.
-Proposed Solution
-Implement a tagging system for stories to clearly indicate their intended release timeline.
-Tag Structure
-Each story will have two primary tags:
+# Story Tagging System Documentation
 
-Completion Month: The month when the story is expected to be completed.
-Target Release Month: The intended month for releasing the story.
+## Overview
 
-Tag Format
+This document describes a story tagging system for Digital.ai Agility. The goal is to improve ownership and decision-making for story release timing by clearly indicating when a story is completed and when it should be released.
 
-Completion Month: CM-[Month]
-Target Release Month: TRM-[Month]
+## Problem Statement
 
-Example: A story completed in August but targeted for October release would have tags:
+It is often unclear whether a completed story should be released in the next available release or held for a later release. For example, a story completed in August might be suitable for August release after testing, or it might need to wait for October.
 
-CM-AUG
-TRM-OCT
+## Proposed Solution
 
-Implementation Process
+Introduce a tagging system that attaches two timeline tags to each story:
 
-Tag Creation: When a new story is created, the responsible team member assigns both the Completion Month and Target Release Month tags.
-Tag Review: A supervisor reviews the assigned tags to ensure they are appropriate before submitting to the delivery manager.
-Tag Updates: If the timeline changes during development, update the tags accordingly.
-Release Planning: Use the Target Release Month tag to easily identify which stories are intended for each release.
-Reporting: Generate reports based on these tags to track the pipeline of stories and their intended release dates.
+- **Completion Month**: when the story is expected to be completed.
+- **Target Release Month**: when the story is intended to be released.
 
-Roles and Responsibilities
+## Tag Format
 
-Team Members: Assign initial tags to stories.
-Supervisors: Review and approve tags before submission to the delivery manager.
-Delivery Manager: Use the tagging system for release planning and management.
+Use the following standardized format:
 
-Benefits
+- `CM-[MONTH]` — Completion Month
+- `TRM-[MONTH]` — Target Release Month
 
-Clear ownership of stories
-Improved visibility into release planning
-Easier decision-making for including stories in specific releases
-Better tracking of development progress against release targets
+### Example
 
-Next Steps
+A story completed in August with an October release target would use:
 
-Implement the tagging system in Digital.ai Agility
-Train team members on the new tagging process
-Establish a regular review process to ensure tags are being used correctly
-Gather feedback after 1-2 release cycles and adjust the system as needed
+- `CM-AUG`
+- `TRM-OCT`
+
+## Implementation Process
+
+1. **Tag Creation**
+   - When a story is created, the responsible team member assigns both `CM-[MONTH]` and `TRM-[MONTH]` tags.
+
+2. **Tag Review**
+   - A supervisor reviews the assigned tags to ensure they accurately reflect the expected completion and release timeline.
+
+3. **Tag Updates**
+   - If the story timeline changes during development, update the tags accordingly.
+
+4. **Release Planning**
+   - Use the `TRM-[MONTH]` tag to identify which stories are intended for each release cycle.
+
+5. **Reporting**
+   - Generate reports from Digital.ai Agility using these tags to track story flow and release readiness.
+
+## Roles and Responsibilities
+
+- **Team Members**: assign initial timeline tags at story creation.
+- **Supervisors**: review and approve tags prior to delivery manager submission.
+- **Delivery Manager**: use the tags to plan releases and manage story inclusion.
+
+## Benefits
+
+- Clear ownership and accountability for story timing.
+- Improved visibility into release planning.
+- Easier decisions about whether stories belong in the current or future release.
+- Better tracking of development progress against planned releases.
+
+## Next Steps
+
+- Implement the tagging system in Digital.ai Agility.
+- Train team members on the new tagging process.
+- Establish a regular review cadence to verify correct tag usage.
+- Gather feedback after 1–2 release cycles and refine the process as needed.
