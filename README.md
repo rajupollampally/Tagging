@@ -65,3 +65,34 @@ A story completed in August with an October release target would use:
 - Train team members on the new tagging process.
 - Establish a regular review cadence to verify correct tag usage.
 - Gather feedback after 1–2 release cycles and refine the process as needed.
+
+## Sample Backend Implementation
+
+This repository now includes a minimal FastAPI backend to support story tagging and release planning:
+
+- `DevOps-Automation-Platform/app/config.py` — configuration settings.
+- `DevOps-Automation-Platform/app/security.py` — JWT and RBAC utilities.
+- `DevOps-Automation-Platform/app/database/session.py` — SQLAlchemy session and initialization.
+- `DevOps-Automation-Platform/app/models/story.py` — story model for timeline tagging.
+- `DevOps-Automation-Platform/app/main.py` — FastAPI application with story CRUD endpoints.
+- `DevOps-Automation-Platform/requirements.txt` — Python dependencies.
+
+### Running the service
+
+1. Copy `.env.example` to `.env` and update connection settings.
+2. Install dependencies:
+   ```bash
+   pip install -r DevOps-Automation-Platform/requirements.txt
+   ```
+3. Start the service:
+   ```bash
+   uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+   ```
+
+### Story Tagging API
+
+- `POST /stories` — create a story with `CM-[MONTH]` and `TRM-[MONTH]`.
+- `GET /stories` — list all stories.
+- `GET /stories/{story_id}` — retrieve a story.
+- `PUT /stories/{story_id}` — update a story.
+- `DELETE /stories/{story_id}` — delete a story (admin only).
