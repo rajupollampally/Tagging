@@ -96,3 +96,20 @@ This repository now includes a minimal FastAPI backend to support story tagging 
 - `GET /stories/{story_id}` — retrieve a story.
 - `PUT /stories/{story_id}` — update a story.
 - `DELETE /stories/{story_id}` — delete a story (admin only).
+
+## Docker Support
+
+Build and run with Docker:
+
+```bash
+docker build -t tagging-api .
+docker run --env-file .env -p 8000:8000 tagging-api
+```
+
+Or use Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+The service will be available at `http://localhost:8000`.

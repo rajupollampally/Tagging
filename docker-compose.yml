@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  tagging-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=${APP_NAME}
+      - DATABASE_URL=${DATABASE_URL}
+      - DATABASE_ECHO=${DATABASE_ECHO}
+      - REDIS_URL=${REDIS_URL}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - JWT_ALGORITHM=${JWT_ALGORITHM}
+      - JWT_EXPIRATION_HOURS=${JWT_EXPIRATION_HOURS}
+      - CORS_ORIGINS=${CORS_ORIGINS}
+    volumes:
+      - ./DevOps-Automation-Platform:/app/DevOps-Automation-Platform
